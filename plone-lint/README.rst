@@ -1,18 +1,31 @@
+==========
 Plone-Lint
 ==========
 
-Custom Docker Container of ttd-lint for checking Plone Documentation against certain words
+Custom `Docker https://www.docker.com/>`_ Container of `ttd-lint <https://github.com/testthedocs/ttd-lint>`_ for checking `Plone Documentation <https://docs.plone.org/>`_ against certain words.
+
+This linter checks the docs against words configured in ``.ttd-lintrc``, if the linter detects one or more of the words in the docs,
+it will fail and tell the file/s where a certain word/words is/are found.
+
+This container and setup is customized for tests against `docs.plone.org <https://docs.plone.org>`_ for a more general approach you may want to check
+`ttd-lint <https://github.com/testthedocs/ttd-lint>`_.
+
+
+Requirements
+============
+
+- `Docker https://www.docker.com/>`_
 
 Features
 ========
 
-- Checks Plone Documentation against certain words to insure consitency
-- Excludes own config and word styleguide from checks
+- Checks `Plone Documentation <https://docs.plone.org/>`_ against certain words to insure consistency.
+- Excludes own config and word style-guide [/about/word_choice.rst] from checks
 
 Documentation
 =============
 
-Full documentation for end users can be found in the "docs" folder.
+For full documentation check the "docs" folder.
 
 Installation
 ============
