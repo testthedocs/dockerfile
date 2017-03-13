@@ -25,14 +25,14 @@ image: ## Builds docker image
 
 .PHONY: push
 push: ## Pushes images
-
 	docker push $(NAME):$(VERSION)
-
-
+	docker push $(NAME):latest
 
 .PHONY: tag_latest
 tag_latest: ## Tag with version and latest tag
-
 	docker tag -f $(NAME):$(VERSION) $(NAME):latest
+
+.PHONY: release
+release: image tag_latest push ## Combine steps to make release
 
 
