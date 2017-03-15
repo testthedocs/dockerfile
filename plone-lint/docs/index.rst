@@ -30,7 +30,7 @@ To run the tests against the docs, you need to mount the documentation directory
 
 .. code-block:: shell
 
-    docker run --rm -v "${PWD}":/srv/docs:rw -v $(pwd)/.ttd-lintrc:/srv/.ttd-lintrc -u "$(id -u)":"$(id -g)" testthedocs/plone-lint
+    docker run --rm -v "${PWD}":/srv/docs:rw -v "${PWD}/.ttd-lintrc:/srv/.ttd-lintrc" -u "$(id -u)":"$(id -g)" testthedocs/plone-lint
 
 This will mount your **working directory** into */srv/docs* and the configuration into ``/srv/docs`` of the container.
 
