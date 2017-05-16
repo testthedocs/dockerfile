@@ -1,6 +1,6 @@
 FROM alpine:latest
-LABEL maintainer "Sven <sven@tiramisu.solutions" \
-	    org.label-schema.vendor = "TiramisuSolutions"
+LABEL maintainer "Sven <sven@testthedocs.org" \
+	    org.label-schema.vendor = "TestTheDocs"
 
 
 ENV HUGO_VERSION 0.20.7
