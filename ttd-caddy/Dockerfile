@@ -32,8 +32,9 @@ RUN builddeps=' \
 EXPOSE 80 443 2015
 WORKDIR /srv
 
-COPY Caddyfile /etc/Caddyfile
-ADD _build/html /srv/html
+# Uncomment this for getting stuff
+#COPY dockerfiles/Caddyfile /etc/Caddyfile
+#COPY _build/html /srv/html
 
 ENTRYPOINT ["/sbin/tini", "--", "/usr/bin/caddy"]
 CMD ["--conf", "/etc/Caddyfile"]
