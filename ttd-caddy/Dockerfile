@@ -35,7 +35,7 @@ RUN builddeps=' \
 EXPOSE 80 443 2015
 WORKDIR /srv
 
-ADD https://raw.githubusercontent.com/testthedocs/ttd-caddy/master/Caddyfile /etc/Caddyfile
+COPY Caddyfile /etc/Caddyfile
 COPY docs/_build/html /srv/html
 
 ENTRYPOINT ["/sbin/tini", "--", "/usr/bin/caddy"]
