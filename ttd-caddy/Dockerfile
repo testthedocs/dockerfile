@@ -6,9 +6,6 @@ FROM alpine:latest
 
 ARG container_version=0.0.0.0
 
-# Create a label "mylabel" and set it to the value of $foo
-LABEL mylabel=$foo
-
 LABEL maintainer "Sven <sven@testthedocs.org>" \
     org.label-schema.vendor = "TestTheDocs" \
     caddy_version="0.10.4" \
@@ -36,7 +33,7 @@ EXPOSE 80 443 2015
 WORKDIR /srv
 
 COPY Caddyfile /etc/Caddyfile
-COPY _build/html /srv/html
+ADD _build/html /srv/html
 
 ENTRYPOINT ["/sbin/tini", "--", "/usr/bin/caddy"]
 CMD ["--conf", "/etc/Caddyfile"]
