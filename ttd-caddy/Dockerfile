@@ -36,7 +36,7 @@ EXPOSE 80 443 2015
 WORKDIR /srv
 
 COPY Caddyfile /etc/Caddyfile
-COPY docs/_build/html /srv/html
+COPY _build/html /srv/html
 
 ENTRYPOINT ["/sbin/tini", "--", "/usr/bin/caddy"]
 CMD ["--conf", "/etc/Caddyfile"]
