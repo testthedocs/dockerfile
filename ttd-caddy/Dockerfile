@@ -8,7 +8,7 @@ ARG container_version=0.0.0.0
 
 LABEL maintainer "Sven <sven@testthedocs.org>" \
     org.label-schema.vendor = "TestTheDocs" \
-    caddy_version="0.10.4" \
+    caddy_version="0.10.6" \
     architecture="amd64" \
     build_version="$container_version"
 
@@ -32,9 +32,7 @@ RUN builddeps=' \
 EXPOSE 80 443 2015
 WORKDIR /srv
 
-# Uncomment this for getting stuff
-#COPY dockerfiles/Caddyfile /etc/Caddyfile
-#COPY _build/html /srv/html
+COPY Caddyfile /etc/Caddyfile
 
 ENTRYPOINT ["/sbin/tini", "--", "/usr/bin/caddy"]
 CMD ["--conf", "/etc/Caddyfile"]
