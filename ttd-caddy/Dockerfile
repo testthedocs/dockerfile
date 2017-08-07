@@ -30,6 +30,7 @@ RUN builddeps=' \
         && apk del --purge $builddeps
 
 EXPOSE 80 443 2015
+VOLUME /root/.caddy
 WORKDIR /srv
 
 COPY Caddyfile /etc/Caddyfile
