@@ -8,7 +8,7 @@ ARG container_version=0.0.0.0
 
 LABEL maintainer "Sven <sven@testthedocs.org>" \
     org.label-schema.vendor = "TestTheDocs" \
-    caddy_version="0.10.6" \
+    caddy_version="0.10.7" \
     architecture="amd64" \
     build_version="$container_version"
 
