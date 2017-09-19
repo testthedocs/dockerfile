@@ -2,38 +2,57 @@
 # Dockerfile for Caddy https://caddyserver.com/
 # Addopted from https://github.com/abiosoft/caddy-docker
 #
-FROM alpine:latest
+#
+# Builder
+#
+FROM golang:1.9-alpine as builder
 
-ARG container_version=0.0.0.0
+ARG version="0.10.9"
+
+RUN apk add --no-cache curl git
+
+# caddy
+RUN git clone https://github.com/mholt/caddy -b "v${version}" /go/src/github.com/mholt/caddy \
+    && cd /go/src/github.com/mholt/caddy \
+    && git checkout -b "v${version}"
+
+# builder dependency
+RUN git clone https://github.com/caddyserver/builds /go/src/github.com/caddyserver/builds
+
+# build
+RUN cd /go/src/github.com/mholt/caddy/caddy \
+    && git checkout -f \
+    && go run build.go \
+    && mv caddy /go/bin
+#ONBUILD COPY plugins.go /go/src/github.com/mholt/caddy/caddy/caddymain/plugins.go
+
+#
+# Final stage
+#
+FROM alpine:3.6
 
 LABEL maintainer "Sven <sven@testthedocs.org>" \
     org.label-schema.vendor = "TestTheDocs" \
-    caddy_version="0.10.7" \
+    caddy_version="0.10.9" \
     architecture="amd64" \
     build_version="$container_version"
 
-RUN builddeps=' \
-        tar \
-        curl \
-        '\
-        && apk --no-cache add \
-        $builddeps \
-        git \
-        tini \
-        openssh-client \
-	&& curl --silent --show-error --fail --location \
-		--header "Accept: application/tar+gzip, application/x-gzip, application/octet-stream" -o - \
-		"https://caddyserver.com/download/linux/amd64?plugins=http.minify" \
-	| tar --no-same-owner -C /usr/bin/ -xz caddy \
-	&& chmod 0755 /usr/bin/caddy \
-        && /usr/bin/caddy -version \
-        && apk del --purge $builddeps
+
+RUN apk add --no-cache \
+    tini
+
+# install caddy
+COPY --from=builder /go/bin/caddy /usr/bin/caddy
+
+# validate install
+RUN /usr/bin/caddy -version
 
 EXPOSE 80 443 2015
-VOLUME /root/.caddy
+VOLUME /root/.caddy /srv
 WORKDIR /srv
 
 COPY Caddyfile /etc/Caddyfile
+#COPY index.html /srv/html/index.html
 
 ENTRYPOINT ["/sbin/tini", "--", "/usr/bin/caddy"]
-CMD ["--conf", "/etc/Caddyfile"]
+CMD ["--conf", "/etc/Caddyfile", "--log", "stdout"]
