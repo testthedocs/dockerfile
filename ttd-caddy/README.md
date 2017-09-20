@@ -34,5 +34,5 @@ This examples changes the default port (2015) to **2016**.
 
 Start container on new port:
 ```bash
-docker run -d -p 2016:2016 milieudefensie/docs:1.3.8
+docker run -d -p 2016:2016 testthedocs/ttd-caddy:latest
 ```
