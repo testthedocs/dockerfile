@@ -3,7 +3,7 @@
 # Addopted from https://github.com/abiosoft/caddy-docker
 #
 #
-# Builder
+# Builder Stage One
 #
 FROM golang:1.9-alpine as builder
 
@@ -27,7 +27,7 @@ RUN cd /go/src/github.com/mholt/caddy/caddy \
 #ONBUILD COPY plugins.go /go/src/github.com/mholt/caddy/caddy/caddymain/plugins.go
 
 #
-# Final stage
+# Final stage - Stage Two
 #
 FROM alpine:3.6
 
