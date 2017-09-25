@@ -27,7 +27,7 @@ docker pull testthedocs/ttd-yamllint
 In this example a yaml file, called ``main.yml`` is checked.
 
 ``` bash
-docker run  --rm -ti -v `pwd`:/build testlint main.yml
+docker run  --rm -ti -v `pwd`:/build testthedocs/ttd-yamllint main.yml
 ```
 
 ## Contribute
