@@ -29,11 +29,11 @@ RUN cd /go/src/github.com/mholt/caddy/caddy \
 #
 # Final stage - Stage Two
 #
-FROM alpine:3.6
+FROM alpine:3.7
 
 LABEL maintainer "Sven <sven@testthedocs.org>" \
     org.label-schema.vendor = "TestTheDocs" \
-    caddy_version="0.10.9" \
+    caddy_version="0.10.10" \
     architecture="amd64" \
     build_version="$container_version"
 
