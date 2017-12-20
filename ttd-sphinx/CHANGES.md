@@ -4,6 +4,7 @@
 
 * Improve docs [svx]
 * Add Markdown support [svx]
+* Update Sphinx to 1.6.5 [svx]
 
 ## 0.0.1
 
