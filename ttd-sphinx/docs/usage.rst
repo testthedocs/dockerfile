@@ -15,7 +15,7 @@ Usage
 Download Image
 ==============
 
-Pull (download) *plone-docsbuilder*:
+Pull (download) *ttd-sphinx*:
 
 .. code-block:: shell
 
@@ -134,4 +134,3 @@ Point your browser to  http://127.0.0.1:8000.
 Each time a change to the documentation source is detected, the HTML is rebuilt and the browser automatically reloaded.
 
 To stop the server press :command:`Ctrl C`.
-

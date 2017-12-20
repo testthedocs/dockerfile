@@ -17,13 +17,13 @@ to install Docker.
 
 You do not need to install anything else.
 
-The first time you run *plone-docsbuilder* it will automatically pull the application container from Docker Hub.
+The first time you run *ttd-sphinx* it will automatically pull the application container from Docker Hub.
 
 In case you prefer to pull (download) the container yourself do the following:
 
 .. code-block:: shell
 
-   docker pull testthedocs/plone-docsbuilder
+   docker pull testthedocs/ttd-sphinx
 
 This will download the latest version of the container.
 
@@ -31,6 +31,7 @@ If you for some reason want or need to use a certain version (release), you can 
 
 .. code-block:: shell
 
-   docker pull testthedocs/plone-docsbuilder:0.0.1
+   docker pull testthedocs/ttd-sphinx:0.0.1
 
-Please check the `Changelog <https://github.com/testthedocs/plone-docsbuilder/blob/master/CHANGES.md>`_ to find out more changes and releases.
+Please check the `Changelog <https://github.com/testthedocs/ttd-sphinx/blob/master/CHANGES.md>`_
+to find out more changes and releases.
