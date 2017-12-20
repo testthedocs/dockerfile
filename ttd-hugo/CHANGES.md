@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.0.5
+
+* Update Hugo to 0.31.10 [svx]
 
 ## 0.0.4
 
