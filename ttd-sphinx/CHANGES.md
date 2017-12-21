@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.3
+
+* Add 'spelling.dict' to list of files ignored by Sphinx [svx]
+
 ## 0.0.2
 
 * Improve docs [svx]
