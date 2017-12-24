@@ -46,6 +46,7 @@ help:
 	@echo "  dummy      to check syntax errors of document sources"
 	@echo "  testbuild  to run a html testbuild in nit-picky mode"
 	@echo "  serve      to serve and rebuild the docs when a change is detected"
+	@echo "  spellcheck to run spellcheck"
 
 
 .PHONY: clean
@@ -61,6 +62,12 @@ html: clean
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	@echo
 	@echo "Build finished. HTML pages are in _build/html"
+
+.PHONY: spellcheck
+spellcheck:
+	$(SPHINXBUILD) -b spelling $(ALLSPHINXOPTS) $(BUILDDIR)/spellcheck
+	@echo
+	@echo "Spellcheck done. Check _build/spellcheck for more info"
 
 .PHONY: debug
 debug: clean

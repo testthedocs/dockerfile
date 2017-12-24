@@ -40,7 +40,13 @@ extensions = [
     'sphinx.ext.intersphinx',
     'sphinx.ext.todo',
     'sphinx.ext.coverage',
+    'sphinxcontrib.spelling',
 ]
+
+# This is our wordlist with know words, like Github or Plone ...
+spelling_word_list_filename= 'spelling.dict'
+spelling_ignore_pypi_package_names=True
+
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['../_templates']
