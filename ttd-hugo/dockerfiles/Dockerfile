@@ -13,8 +13,11 @@ RUN builddeps=' \
 	tar \
         python3 \
 	' \
-	&& apk --no-cache add \
+	&& adduser -s /bin/false -D -H ttd \
+        && apk --no-cache add \
 	$builddeps \
+        tini \
+        su-exec \
         && python3 -m ensurepip \
         && rm -r /usr/lib/python*/ensurepip \
         && pip3 install --upgrade pip \
@@ -24,11 +27,13 @@ RUN builddeps=' \
 	&& tar zxf hugo_${HUGO_VERSION}_Linux-64bit.tar.gz \
 	&& mv hugo /usr/local/bin/hugo \
 	&& rm hugo_${HUGO_VERSION}_Linux-64bit.tar.gz \
-	&& apk del --purge $builddeps
+	&& apk del --purge $builddeps \
+        && rm -rf $PIP_CACHE
 
 VOLUME /src
 WORKDIR /src
 
-ENTRYPOINT [ "hugo" ]
+COPY dockerfiles/entrypoint.sh /usr/local/bin/entrypoint.sh
+ENTRYPOINT [ "/sbin/tini", "--", "/usr/local/bin/entrypoint.sh" ]
 
 
