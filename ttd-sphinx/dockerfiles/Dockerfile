@@ -3,6 +3,7 @@ LABEL maintainer "Sven <sven@testthedocs.org>" \
     org.label-schema.vendor = "TestTheDocs"
 
 ENV PIP_CACHE /root/.cache
+ENV SPHINX_VERSION 1.6.6
 
 RUN builddeps=' \
     git \
@@ -21,7 +22,7 @@ RUN builddeps=' \
     && rm -r /usr/lib/python*/ensurepip \
     && pip3 install --upgrade pip \
     && pip3 install --upgrade setuptools \
-    && pip3 install sphinx \
+    && pip3 install sphinx==${SPHINX_VERSION} \
 		sphinx_rtd_theme \
 		sphinx-autobuild \
                 recommonmark \
