@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.0.5
+
+* Pin Sphinx version [svx]
+
+## 0.0.4
+
+* Add spellcheck (Sphinx based) [svx]
+
 ## 0.0.3
 
 * Add 'spelling.dict' to list of files ignored by Sphinx [svx]
