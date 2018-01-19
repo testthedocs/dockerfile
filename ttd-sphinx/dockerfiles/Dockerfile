@@ -8,7 +8,7 @@ ENV SPHINX_VERSION 1.6.6
 RUN builddeps=' \
     git \
     ' \
-    && adduser -s /bin/false -D -H sphinx \
+    && adduser -s /bin/false -D -H ttd \
     && apk --no-cache add \
     $builddeps \
     python3 \
@@ -28,6 +28,7 @@ RUN builddeps=' \
                 recommonmark \
                 pyenchant \
                 sphinxcontrib-spelling \
+                sphinxcontrib.gist \
     && pip3 install -e git://github.com/svx/sphinxcontrib-osexample.git@plone#egg=sphinxcontrib-osexample \
     && apk del --purge $builddeps \
     && rm -rf $PIP_CACHE

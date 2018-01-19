@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.0.6
+
+* Fix: 10 [svx]
+* Fix: 7 [svx]
+
 ## 0.0.5
 
 * Pin Sphinx version [svx]

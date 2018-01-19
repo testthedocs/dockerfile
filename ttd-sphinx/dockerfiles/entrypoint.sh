@@ -14,8 +14,8 @@ fi
 
 
 #exec su-exec $@
-# Re-set permission to the `sphinx` user
+# Re-set permission to the `ttd` user
 # This avoids permission denied if the data volume is mounted by root
-chown -R sphinx /build
-exec su-exec sphinx make "$@"
+chown -R ttd /build
+exec su-exec ttd make "$@"
 
