@@ -4,9 +4,11 @@
 # You can set these variables from the command line.
 SPHINXOPTS    =
 SPHINXBUILD   = sphinx-build -c _config
+OWN_BUILD     = sphinx-build
 PAPER         =
 BUILDDIR      = docs/_build
 CONFPATH      = -c _config
+OWN_CONF      = docs/conf.py
 
 # Internal variables.
 PAPEROPT_a4     = -D latex_paper_size=a4
@@ -59,9 +61,14 @@ serve:
 
 .PHONY: html
 html: clean
+ifneq ($(wildcard $(OWN_CONF)/),)
+	@echo "Found own config, will use that one"
+	$(OWN_BUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
+else
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	@echo
 	@echo "Build finished. HTML pages are in _build/html"
+endif
 
 .PHONY: spellcheck
 spellcheck:
