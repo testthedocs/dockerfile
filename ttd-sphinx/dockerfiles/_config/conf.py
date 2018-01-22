@@ -42,6 +42,7 @@ extensions = [
     'sphinx.ext.coverage',
     'sphinxcontrib.spelling',
     'sphinxcontrib.gist',
+    'sphinx_tabs.tabs',
 ]
 
 # This is our wordlist with know words, like Github or Plone ...

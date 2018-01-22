@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.8
+
+* Fix: #5 [svx]
+
 ## 0.0.7
 
 * Fix: #9 [svx]

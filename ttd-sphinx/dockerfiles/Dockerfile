@@ -29,6 +29,7 @@ RUN builddeps=' \
                 pyenchant \
                 sphinxcontrib-spelling \
                 sphinxcontrib.gist \
+                sphinx_tabs \
     && pip3 install -e git://github.com/svx/sphinxcontrib-osexample.git@plone#egg=sphinxcontrib-osexample \
     && apk del --purge $builddeps \
     && rm -rf $PIP_CACHE
