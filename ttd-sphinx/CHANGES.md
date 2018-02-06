@@ -1,5 +1,9 @@
 # Changelog
 
+##.0.0.9
+
+* Update Sphinx to 1.6.7
+
 ## 0.0.8
 
 * Fix: #5 [svx]
