@@ -1,8 +1,12 @@
 # Changelog
 
-##.0.0.9
+## 0.0.10
 
-* Update Sphinx to 1.6.7
+* Update Sphinx to 1.7.1 [svx]
+
+## 0.0.9
+
+* Update Sphinx to 1.6.7 [svx]
 
 ## 0.0.8
 

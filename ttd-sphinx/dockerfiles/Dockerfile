@@ -3,7 +3,7 @@ LABEL maintainer "Sven <sven@testthedocs.org>" \
     org.label-schema.vendor = "TestTheDocs"
 
 ENV PIP_CACHE /root/.cache
-ENV SPHINX_VERSION 1.6.7
+ENV SPHINX_VERSION 1.7.1
 
 RUN builddeps=' \
     git \
