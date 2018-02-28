@@ -1,5 +1,10 @@
 # Changelog
 
+
+## 0.0.8
+
+* Update hugo to 0.37 [svx]
+
 ## 0.0.6
 
 * Move docker files into ``dockerfiles`` dir [svx]
