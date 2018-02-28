@@ -5,9 +5,9 @@
 #
 # Builder Stage One
 #
-FROM golang:1.9-alpine as builder
+FROM golang:1.10.0-alpine as builder
 
-ARG version="0.10.10"
+ARG version="0.10.11"
 
 RUN apk add --no-cache curl git
 
@@ -33,9 +33,8 @@ FROM alpine:3.7
 
 LABEL maintainer "Sven <sven@testthedocs.org>" \
     org.label-schema.vendor = "TestTheDocs" \
-    caddy_version="0.10.10" \
-    architecture="amd64" \
-    build_version="$container_version"
+    caddy_version="$version" \
+    architecture="amd64"
 
 
 RUN apk add --no-cache \

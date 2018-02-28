@@ -22,7 +22,7 @@ help: ## This help message
 
 .PHONY: build
 build: ## Builds docker image
-	docker build --no-cache=true --build-arg container_version=$(VERSION) -t $(NAME):$(VERSION) --rm .
+	docker build --no-cache=true --build-arg version=$(VERSION) -t $(NAME):$(VERSION) --rm .
 
 .PHONY: push
 push: ## Pushes images
