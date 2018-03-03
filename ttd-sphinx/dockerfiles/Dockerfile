@@ -2,7 +2,6 @@ FROM alpine:latest
 LABEL maintainer "Sven <sven@testthedocs.org>" \
     org.label-schema.vendor = "TestTheDocs"
 
-ENV PIP_CACHE /root/.cache
 ENV SPHINX_VERSION 1.7.1
 
 RUN builddeps=' \
@@ -20,9 +19,9 @@ RUN builddeps=' \
     aspell-en \
     && python3 -m ensurepip \
     && rm -r /usr/lib/python*/ensurepip \
-    && pip3 install --upgrade pip \
-    && pip3 install --upgrade setuptools \
-    && pip3 install sphinx==${SPHINX_VERSION} \
+    && pip3 install --no-cache-dir --upgrade pip \
+    && pip3 install --no-cache-dir --upgrade setuptools \
+    && pip3 install --no-cache-dir sphinx==${SPHINX_VERSION} \
 		sphinx_rtd_theme \
 		sphinx-autobuild \
                 recommonmark \
@@ -31,8 +30,7 @@ RUN builddeps=' \
                 sphinxcontrib.gist \
                 sphinx_tabs \
     && pip3 install -e git://github.com/svx/sphinxcontrib-osexample.git@plone#egg=sphinxcontrib-osexample \
-    && apk del --purge $builddeps \
-    && rm -rf $PIP_CACHE
+    && apk del --purge $builddeps
 
 VOLUME ["/build/docs"]
 
