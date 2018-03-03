@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.11
+
+* Remove pip cache, fix #13 [svx]
+
 ## 0.0.10
 
 * Update Sphinx to 1.7.1 [svx]
