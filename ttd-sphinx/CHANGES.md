@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.0.12
+
+* Add '-j auto' to sphinx-build to autoscale
+  (#4271: sphinx-build supports an option called -j auto to adjust numbers
+  of processes automatically.)
+  [svx]
+
+* Improve color output
+  Add '-it' to docker run to get pretty colors
+  (docker run -it -v `pwd`:/build/docs ttsc:latest html)
+  [svx]
+
+* Remove pip-cache
+  Use pip install without cache-dir
+  [svx]
+
 ## 0.0.11
 
 * Remove pip cache, fix #13 [svx]

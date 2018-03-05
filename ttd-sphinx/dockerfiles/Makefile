@@ -1,6 +1,13 @@
 # Makefile for Sphinx documentation
 #
 
+# We like colors
+# # From: https://coderwall.com/p/izxssa/colored-makefile-for-golang-projects
+RESET=\x1b[0m
+GREEN=\x1b[32;01m
+RED=\x1b[31;01m
+YELLOW=\x1b[33;01m
+
 # You can set these variables from the command line.
 SPHINXOPTS    =
 SPHINXBUILD   = sphinx-build -c _config
@@ -53,7 +60,7 @@ help:
 
 .PHONY: clean
 clean:
-	rm -rf $(BUILDDIR)/*
+	@rm -rf $(BUILDDIR)/*
 
 .PHONY: serve
 serve:
@@ -65,34 +72,48 @@ ifneq ($(wildcard $(OWN_CONF)/),)
 	@echo "Found own config, will use that one"
 	$(OWN_BUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 else
-	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
-	@echo
-	@echo "Build finished. HTML pages are in _build/html"
+	@echo -en "$(GREEN)==> Building HTML$(RESET)"
+	@echo ""
+	@$(SPHINXBUILD) -j auto -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
+	@echo ""
+	@echo -en "$(YELLOW)Build finished. HTML pages are in _build/html$(RESET)"
+	@echo ""
 endif
 
 .PHONY: spellcheck
 spellcheck:
-	$(SPHINXBUILD) -b spelling $(ALLSPHINXOPTS) $(BUILDDIR)/spellcheck
-	@echo
-	@echo "Spellcheck done. Check _build/spellcheck for more info"
+	@echo ""
+	@echo -en "$(GREEN)==> Running Spellcheck$(RESET)"
+	@echo ""
+	@$(SPHINXBUILD) -j auto -b spelling $(ALLSPHINXOPTS) $(BUILDDIR)/spellcheck
+	@echo ""
+	@echo -en "$(YELLOW)Spellcheck done. Check _build/spellcheck for more info$(RESET)"
+	@echo ""
 
 .PHONY: debug
 debug: clean
-	$(SPHINXBUILD) -n -b html $(ALLSPHINXOPTS) $(BUILDDIR)/debug
-	@echo
-	@echo "Debug build finished. The HTML pages are in _build/debug"
+	@echo ""
+	@echo -en "$(GREEN)==> Building HTML in debug mode$(RESET)"
+	@echo ""
+	@$(SPHINXBUILD) -j auto -n -b html $(ALLSPHINXOPTS) $(BUILDDIR)/debug
+	@echo ""
+	@echo -en "$(YELLOW)Debug build finished. The HTML pages are in _build/debug$(RESET)"
+	@echo ""
 
 .PHONY: debug-strict
 debug-strict: clean
+	@echo ""
+	@echo -en "$(GREEN)==> Building HTML in debug-strict mode$(RESET)"
+	@echo ""
+	@$(SPHINXBUILD) -j auto -n -W -b html $(ALLSPHINXOPTS) $(BUILDDIR)/debug-strict
+	@echo ""
+	@echo -en "$(YELLOW)Strict debugging finished. The HTML pages are in _build/debug-strict$(RESET)"
 	@echo
-	$(SPHINXBUILD) -n -W -b html $(ALLSPHINXOPTS) $(BUILDDIR)/debug-strict
-	@echo
-	@echo "Strict debugging finished. The HTML pages are in _build/debug-strict."
 
 
 .PHONY: html-quiet
 html-quiet:
-	$(SPHINXBUILD) -b html -Q $(BUILDDIR)/html
+	$(SPHINXBUILD) -j auto -b html -Q $(BUILDDIR)/html
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html"
 
