@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.14
+
+* Improve color output [svx]
+
 ## 0.0.12
 
 * Add '-j auto' to sphinx-build to autoscale

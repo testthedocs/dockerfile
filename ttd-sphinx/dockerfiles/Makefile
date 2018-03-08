@@ -69,8 +69,14 @@ serve:
 .PHONY: html
 html: clean
 ifneq ($(wildcard $(OWN_CONF)/),)
-	@echo "Found own config, will use that one"
-	$(OWN_BUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
+	@echo -en "$(GREEN)Found own config, will use that one$(RESET)"
+	@echo ""
+	@echo -en "$(GREEN)==> Building HTML$(RESET)"
+	@echo ""
+	@$(OWN_BUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
+	@echo ""
+	@echo -en "$(YELLOW)Build finished. HTML pages are in _build/html$(RESET)"
+	@echo ""
 else
 	@echo -en "$(GREEN)==> Building HTML$(RESET)"
 	@echo ""
