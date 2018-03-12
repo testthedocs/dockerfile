@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.0.15-dev
+
+* Add sphinx.ext.githubpages
+* Improve sphinx makefile for sphinx-autobuild
+  [svx]
+
 ## 0.0.14
 
 * Improve color output [svx]

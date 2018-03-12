@@ -40,6 +40,7 @@ extensions = [
     'sphinx.ext.intersphinx',
     'sphinx.ext.todo',
     'sphinx.ext.coverage',
+    'sphinx.ext.githubpages',
     'sphinxcontrib.spelling',
     'sphinxcontrib.gist',
     'sphinx_tabs.tabs',
