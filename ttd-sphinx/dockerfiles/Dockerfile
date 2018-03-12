@@ -43,3 +43,5 @@ WORKDIR /build
 COPY dockerfiles/entrypoint.sh /usr/local/bin/entrypoint.sh
 
 ENTRYPOINT ["/sbin/tini", "--", "/usr/local/bin/entrypoint.sh"]
+
+EXPOSE 8000

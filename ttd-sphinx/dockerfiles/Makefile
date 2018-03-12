@@ -64,7 +64,7 @@ clean:
 
 .PHONY: serve
 serve:
-	sphinx-autobuild $(CONFPATH) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
+	sphinx-autobuild $(CONFPATH) -b html --host 0.0.0.0 $(ALLSPHINXOPTS) $(BUILDDIR)/html
 
 .PHONY: html
 html: clean
