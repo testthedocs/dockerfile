@@ -134,3 +134,11 @@ Point your browser to  http://127.0.0.1:8000.
 Each time a change to the documentation source is detected, the HTML is rebuilt and the browser automatically reloaded.
 
 To stop the server press :command:`Ctrl C`.
+
+.. note::
+
+   We changed the ``Makefile`` by adding some autbuild configs.
+
+   Run ``docker run -it -p 8000:8000 -v `pwd`:/build/docs tsa serve``
+
+   We need to add this to the docs here, how it works and why, etc ...
