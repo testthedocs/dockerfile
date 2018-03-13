@@ -2,6 +2,16 @@
 Add-ons
 =======
 
+``ttd-sphinx`` comes with the following Add-ons included:
+
+* sphinx.ext.intersphinx
+* sphinx.ext.todo
+* sphinx.ext.coverage
+* sphinx.ext.githubpages
+* sphinxcontrib.spelling
+* sphinxcontrib.gist
+* sphinx_tabs.tabs
+
 Sphinx-tabs
 ===========
 
