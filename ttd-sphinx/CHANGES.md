@@ -2,9 +2,9 @@
 
 ## 0.0.15-dev
 
-* Add sphinx.ext.githubpages
-* Improve sphinx makefile for sphinx-autobuild
-  [svx]
+* Add sphinx.ext.githubpages [svx]
+* Improve sphinx makefile for sphinx-autobuild [svx]
+* Improve color output of index.rst test [svx]
 
 ## 0.0.14
 
