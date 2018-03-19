@@ -2,6 +2,7 @@
 
 ## 0.0.15-dev
 
+* Fix ``serve`` command to work on macOS [svx]
 * Add sphinx.ext.githubpages [svx]
 * Improve sphinx makefile for sphinx-autobuild [svx]
 * Improve color output of index.rst test [svx]
