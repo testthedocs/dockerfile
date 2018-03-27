@@ -7,7 +7,7 @@
 #
 FROM golang:1.10.0-alpine as builder
 
-ARG version="0.10.11"
+ARG version="0.10.12"
 
 RUN apk add --no-cache curl git
 
