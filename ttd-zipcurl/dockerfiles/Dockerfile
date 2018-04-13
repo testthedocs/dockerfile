@@ -10,7 +10,8 @@ RUN adduser -s /bin/false -D -H ttd \
     curl \
     tini \
     su-exec \
-    zip
+    zip \
+    openssl
 
 COPY dockerfiles/entrypoint.sh /usr/local/bin/entrypoint.sh
 
