@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.14
+
+* Fix bug with ssl certs
+
 ## 0.0.12
 
 * Update hugo to 0.38.2 [svx]

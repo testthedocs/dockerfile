@@ -8,7 +8,6 @@ ENV PIP_CACHE /root/.cache
 
 
 RUN builddeps=' \
-	ca-certificates \
 	wget \
 	tar \
         python3 \
