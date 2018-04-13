@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.0.12
+
+* Update hugo to 0.38.2 [svx]
 
 ## 0.0.8
 

@@ -3,7 +3,7 @@ LABEL maintainer "Sven <sven@testthedocs.org" \
         org.label-schema.vendor = "TestTheDocs" \
         hugo_version=$HUGO_VERSION
 
-ENV HUGO_VERSION 0.37.1
+ENV HUGO_VERSION 0.38.2
 ENV PIP_CACHE /root/.cache
 
 
@@ -16,6 +16,7 @@ RUN builddeps=' \
 	&& adduser -s /bin/false -D -H ttd \
         && apk --no-cache add \
 	$builddeps \
+        ca-certificates \
         tini \
         su-exec \
         && python3 -m ensurepip \
