@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.15
+
+* Update hufo to .40.1 [svx]
+
 ## 0.0.14
 
 * Fix bug with ssl certs
