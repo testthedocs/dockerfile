@@ -2,7 +2,7 @@ FROM alpine:latest
 LABEL maintainer "Sven <sven@testthedocs.org>" \
     org.label-schema.vendor = "TestTheDocs"
 
-ENV SPHINX_VERSION 1.7.1
+ENV SPHINX_VERSION 1.7.4
 
 RUN builddeps=' \
     git \
