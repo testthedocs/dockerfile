@@ -1,8 +1,12 @@
 # Changelog
 
+## 0.0.16
+
+* Update hugo to 0.40.3 [svx]
+
 ## 0.0.15
 
-* Update hufo to .40.1 [svx]
+* Update hugo to 0.40.1 [svx]
 
 ## 0.0.14
 
