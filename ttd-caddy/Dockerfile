@@ -1,50 +1,46 @@
-#
 # Dockerfile for Caddy https://caddyserver.com/
 # Addopted from https://github.com/abiosoft/caddy-docker
 #
-#
-# Builder Stage One
+# Builder
 #
 FROM golang:1.10.0-alpine as builder
+ARG version="0.11.0"
+# We do not use plugins at the moment
+#ARG plugins="git,filemanager,cors,realip,expires,cache"
+RUN apk add --no-cache curl git gcc musl-dev
+COPY builder.sh /usr/bin/builder.sh
 
-ARG version="0.10.14"
-
-RUN apk add --no-cache curl git
-
-# caddy
-RUN git clone https://github.com/mholt/caddy -b "v${version}" /go/src/github.com/mholt/caddy \
-    && cd /go/src/github.com/mholt/caddy \
-    && git checkout -b "v${version}"
-
-# builder dependency
-RUN git clone https://github.com/caddyserver/builds /go/src/github.com/caddyserver/builds
-
-# build
-RUN cd /go/src/github.com/mholt/caddy/caddy \
-    && git checkout -f \
-    && go run build.go \
-    && mv caddy /go/bin
-#ONBUILD COPY plugins.go /go/src/github.com/mholt/caddy/caddy/caddymain/plugins.go
+# Run the build script
+RUN VERSION=${version} PLUGINS=${plugins} ENABLE_TELEMETRY=false /bin/sh /usr/bin/builder.sh
 
 #
-# Final stage - Stage Two
+# Final stage
 #
 FROM alpine:3.7
 
+ARG version="0.11.0"
+
 LABEL maintainer "Sven <sven@testthedocs.org>" \
     org.label-schema.vendor = "TestTheDocs" \
-    caddy_version="$version" \
-    architecture="amd64"
+    caddy_version="$version"
 
 
-RUN apk add --no-cache \
-    tini
+# We do not use Let's Encrypt for now
+# Let's Encrypt Agreement
+#ENV ACME_AGREE="false"
 
-# install caddy
-COPY --from=builder /go/bin/caddy /usr/bin/caddy
+# We do not want Telementry
+# Telemetry Stats
+ENV ENABLE_TELEMETRY="false"
 
-# validate install
+RUN apk add --no-cache tini
+
+# Install caddy
+COPY --from=builder /install/caddy /usr/bin/caddy
+
+# Validate install
 RUN /usr/bin/caddy -version
+RUN /usr/bin/caddy -plugins
 
 EXPOSE 80 443 2015
 VOLUME /root/.caddy /srv
@@ -53,5 +49,8 @@ WORKDIR /srv
 COPY Caddyfile /etc/Caddyfile
 #COPY index.html /srv/html/index.html
 
+
+#ENTRYPOINT ["/bin/parent", "caddy"]
+#CMD ["--conf", "/etc/Caddyfile", "--log", "stdout", "--agree=$ACME_AGREE"]
 ENTRYPOINT ["/sbin/tini", "--", "/usr/bin/caddy"]
 CMD ["--conf", "/etc/Caddyfile", "--log", "stdout"]

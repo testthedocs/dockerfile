@@ -1,7 +1,7 @@
 # ttd-caddy
 Caddy Webserver In A Container
 
-This container used different stages.
+This is a build of caddy without telemetry
 
 ## Stage One
 
