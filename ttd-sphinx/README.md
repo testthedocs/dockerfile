@@ -1,5 +1,4 @@
 [![](https://images.microbadger.com/badges/image/testthedocs/ttd-sphinx.svg)](https://microbadger.com/images/testthedocs/ttd-sphinx "Get your own image badge on microbadger.com")
-
 [![](https://images.microbadger.com/badges/version/testthedocs/ttd-sphinx.svg)](https://microbadger.com/images/testthedocs/ttd-sphinx "Get your own version badge on microbadger.com")
 
 # ttd-sphinx
