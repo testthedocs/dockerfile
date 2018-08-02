@@ -1,7 +1,9 @@
 # Changelog
 
-## 0.0.15-dev
+## 0.0.15
 
+* Improve Dockerfile
+* Update Sphinx version to 1.7.6
 * Add sphinx.ext.githubpages
 * Improve sphinx makefile for sphinx-autobuild
   [svx]

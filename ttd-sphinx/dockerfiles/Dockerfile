@@ -1,8 +1,15 @@
-FROM alpine:latest
+FROM alpine:3.8
 LABEL maintainer "Sven <sven@testthedocs.org>" \
     org.label-schema.vendor = "TestTheDocs"
 
-ENV SPHINX_VERSION 1.7.1
+ENV SPHINX_VERSION 1.7.6
+
+VOLUME ["/build/docs"]
+ 
+ COPY dockerfiles/_config /build/_config
+ COPY dockerfiles/Makefile /build/Makefile
+ COPY dockerfiles/_theme /build/_theme
+
 
 RUN builddeps=' \
     git \
@@ -10,33 +17,34 @@ RUN builddeps=' \
     && adduser -s /bin/false -D -H ttd \
     && apk --no-cache add \
     $builddeps \
-    python3 \
-    ca-certificates \
-    make \
-    tini \
-    su-exec \
-    enchant \
     aspell-en \
+    ca-certificates \
+    enchant \
+    make \
+    python3 \
+    su-exec \
+    tini \
     && python3 -m ensurepip \
     && rm -r /usr/lib/python*/ensurepip \
     && pip3 install --no-cache-dir --upgrade pip \
     && pip3 install --no-cache-dir --upgrade setuptools \
     && pip3 install --no-cache-dir sphinx==${SPHINX_VERSION} \
-		sphinx_rtd_theme \
-		sphinx-autobuild \
-                recommonmark \
-                pyenchant \
-                sphinxcontrib-spelling \
-                sphinxcontrib.gist \
-                sphinx_tabs \
+        pyenchant \
+        recommonmark \
+        sphinx-autobuild \
+        sphinxcontrib.gist \
+        sphinx_tabs \
+        sphinx_rtd_theme \
+        sphinxcontrib-spelling \
+	sphinx-autobuild \
     && pip3 install -e git://github.com/svx/sphinxcontrib-osexample.git@plone#egg=sphinxcontrib-osexample \
     && apk del --purge $builddeps
 
-VOLUME ["/build/docs"]
+#VOLUME ["/build/docs"]
 
-COPY dockerfiles/_config /build/_config
-COPY dockerfiles/Makefile /build/Makefile
-COPY dockerfiles/_theme /build/_theme
+#COPY dockerfiles/_config /build/_config
+#COPY dockerfiles/Makefile /build/Makefile
+#COPY dockerfiles/_theme /build/_theme
 
 WORKDIR /build
 
