@@ -5,11 +5,9 @@ LABEL maintainer "Sven <sven@testthedocs.org>" \
 ENV SPHINX_VERSION 1.7.6
 
 VOLUME ["/build/docs"]
- 
- COPY dockerfiles/_config /build/_config
- COPY dockerfiles/Makefile /build/Makefile
- COPY dockerfiles/_theme /build/_theme
-
+COPY dockerfiles/_config /build/_config
+COPY dockerfiles/Makefile /build/Makefile
+COPY dockerfiles/_theme /build/_theme
 
 RUN builddeps=' \
     git \
@@ -39,12 +37,6 @@ RUN builddeps=' \
 	sphinx-autobuild \
     && pip3 install -e git://github.com/svx/sphinxcontrib-osexample.git@plone#egg=sphinxcontrib-osexample \
     && apk del --purge $builddeps
-
-#VOLUME ["/build/docs"]
-
-#COPY dockerfiles/_config /build/_config
-#COPY dockerfiles/Makefile /build/Makefile
-#COPY dockerfiles/_theme /build/_theme
 
 WORKDIR /build
 
