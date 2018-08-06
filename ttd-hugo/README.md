@@ -1,3 +1,5 @@
+[![Gitter chat](https://badges.gitter.im/gitterHQ/gitter.png)](https://gitter.im/testthedocs/Lobby)
+
 # ttd-hugo
 
 [Alpine](https://alpinelinux.org/) based container for [Hugo](http://gohugo.io/).
