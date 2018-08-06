@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.17
+
+* Update hugo to 0.46 [svx]
+
 ## 0.0.16
 
 * Update hugo to 0.40.3 [svx]
