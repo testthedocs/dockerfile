@@ -4,6 +4,10 @@
 
 * Update hugo to 0.0.47 [svx]
 
+## 0.0.16.1
+
+* Update hugo to 0.40.3 [svx]
+
 ## 0.0.15
 
 * Update hugo to 0.40.1 [svx]
