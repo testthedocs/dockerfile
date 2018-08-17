@@ -1,12 +1,16 @@
 # Changelog
 
+## 0.0.16
+
+* Update hugo to 0.0.47 [svx]
+
 ## 0.0.15
 
-* Update hufo to .40.1 [svx]
+* Update hugo to 0.40.1 [svx]
 
 ## 0.0.14
 
-* Fix bug with ssl certs
+* Fix bug with ssl certs [svx]
 
 ## 0.0.12
 
