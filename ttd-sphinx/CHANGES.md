@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.0.18
+
+* Update Sphinx to 1.8.1
+  [svx]
+
 ## 0.0.16
 
 * Improve README
