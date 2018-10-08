@@ -35,6 +35,7 @@ RUN builddeps=' \
         sphinx_rtd_theme \
         sphinxcontrib-spelling \
 	sphinx-autobuild \
+        sphinx_press_theme \
     && pip3 install -e git://github.com/svx/sphinxcontrib-osexample.git@plone#egg=sphinxcontrib-osexample \
     && apk del --purge $builddeps
 

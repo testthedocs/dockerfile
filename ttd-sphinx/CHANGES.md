@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.0.19
+
+### New
+
+* Add 'sphinx_press_theme'
+  [svx]
+
 ## 0.0.18
 
 * Update Sphinx to 1.8.1
