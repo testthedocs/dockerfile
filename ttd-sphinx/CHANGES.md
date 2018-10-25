@@ -1,5 +1,16 @@
 # Changelog
 
+
+## 0.0.21
+
+* Remove sphinx_tabs.tabs extension because it does not play nice with latest Python
+
+## 0.0.20
+
+* Remove sphinxcontrib.gist extension because it does not play nice with latest Python
+  [svx]
+
+
 ## 0.0.19
 
 ### New

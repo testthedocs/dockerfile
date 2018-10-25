@@ -30,8 +30,6 @@ RUN builddeps=' \
         pyenchant \
         recommonmark \
         sphinx-autobuild \
-        sphinxcontrib.gist \
-        sphinx_tabs \
         sphinx_rtd_theme \
         sphinxcontrib-spelling \
 	sphinx-autobuild \
