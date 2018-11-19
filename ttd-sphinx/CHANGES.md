@@ -1,9 +1,14 @@
 # Changelog
 
+## 0.0.22
+
+* Remove all broken add-ons (as in not playing nice with python3)
+  [svx]
 
 ## 0.0.21
 
 * Remove sphinx_tabs.tabs extension because it does not play nice with latest Python
+  [svx]
 
 ## 0.0.20
 

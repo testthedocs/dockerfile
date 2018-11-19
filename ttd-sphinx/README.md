@@ -3,6 +3,13 @@
 
 # ttd-sphinx
 
+
+**Note:**
+
+If you are/were using *ttd-sphinx* with spell-check and *os-example* please stick with version 0.0.21.
+
+
+
 Containerized application based on [Sphinx](http://www.sphinx-doc.org/en/stable/).
 
 ## Features

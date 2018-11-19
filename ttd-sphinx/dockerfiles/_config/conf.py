@@ -41,7 +41,6 @@ extensions = [
     'sphinx.ext.todo',
     'sphinx.ext.coverage',
     'sphinx.ext.githubpages',
-    'sphinxcontrib.spelling',
 ]
 
 # This is our wordlist with know words, like Github or Plone ...

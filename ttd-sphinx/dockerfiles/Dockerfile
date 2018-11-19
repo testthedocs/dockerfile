@@ -17,7 +17,6 @@ RUN builddeps=' \
     $builddeps \
     aspell-en \
     ca-certificates \
-    enchant \
     make \
     python3 \
     su-exec \
@@ -27,14 +26,9 @@ RUN builddeps=' \
     && pip3 install --no-cache-dir --upgrade pip \
     && pip3 install --no-cache-dir --upgrade setuptools \
     && pip3 install --no-cache-dir sphinx==${SPHINX_VERSION} \
-        pyenchant \
         recommonmark \
-        sphinx-autobuild \
         sphinx_rtd_theme \
-        sphinxcontrib-spelling \
-	sphinx-autobuild \
         sphinx_press_theme \
-    && pip3 install -e git://github.com/svx/sphinxcontrib-osexample.git@plone#egg=sphinxcontrib-osexample \
     && apk del --purge $builddeps
 
 WORKDIR /build
