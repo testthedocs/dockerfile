@@ -29,6 +29,7 @@ RUN builddeps=' \
         recommonmark \
         sphinx_rtd_theme \
         sphinx_press_theme \
+        sphinx-sitemap \
     && apk del --purge $builddeps
 
 WORKDIR /build

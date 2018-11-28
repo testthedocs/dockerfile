@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.0.23
+
+* Add https://pypi.org/project/sphinx-sitemap/
+  [svx]
+
 ## 0.0.22
 
 * Remove all broken add-ons (as in not playing nice with python3)
