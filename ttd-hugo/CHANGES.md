@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.19
+
+* Update hugo to 0.52 [svx]
+
 ## 0.0.18
 
 * Update hugo to 0.49 [svx]

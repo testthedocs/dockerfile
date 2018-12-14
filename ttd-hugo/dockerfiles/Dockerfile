@@ -3,7 +3,7 @@ LABEL maintainer "Sven <sven@testthedocs.org" \
         org.label-schema.vendor = "TestTheDocs" \
         hugo_version=$HUGO_VERSION
 
-ENV HUGO_VERSION 0.49
+ENV HUGO_VERSION 0.52
 ENV PIP_CACHE /root/.cache
 
 
