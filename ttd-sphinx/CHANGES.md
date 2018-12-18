@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.0.24
+
+* Update Sphinx to 1.8.2
+  [svx]
+
 ## 0.0.23
 
 * Add https://pypi.org/project/sphinx-sitemap/
