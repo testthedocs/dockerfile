@@ -1,10 +1,12 @@
-FROM alpine:latest
-LABEL maintainer "Sven <sven@wundertax.de" \
-    org.label-schema.vendor = "wundertax"
+FROM alpine:3.8
+LABEL maintainer "Sven <sven@testthedocs.org" \
+    org.label-schema.vendor = "TestTheDocs"
 
-ENV MKDOCS_VERSION 0.17.3
+ENV MKDOCS_VERSION 1.0.4
 
-RUN adduser -s /bin/false -D -H wt \
+COPY dockerfiles/entrypoint.sh /usr/local/bin/entrypoint.sh
+
+RUN adduser -s /bin/false -D -H ttd \
     && apk --no-cache add \
     python3 \
     bash \
@@ -15,15 +17,14 @@ RUN adduser -s /bin/false -D -H wt \
     && pip3 install --no-cache-dir --upgrade pip \
     && pip3 install --no-cache-dir --upgrade setuptools \
     && pip3 install --no-cache-dir mkdocs==${MKDOCS_VERSION} \
-		pygments \
-                mkdocs-material \
-                pymdown-extensions
+        pygments \
+        mkdocs-material \
+        pymdown-extensions
 
 VOLUME ["/docs/"]
 
 WORKDIR /docs/
 
-COPY dockerfiles/entrypoint.sh /usr/local/bin/entrypoint.sh
 
 ENTRYPOINT ["/sbin/tini", "--", "/usr/local/bin/entrypoint.sh"]
 

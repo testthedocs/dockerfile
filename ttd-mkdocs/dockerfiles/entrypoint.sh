@@ -83,12 +83,9 @@ esac
 
 exit 0
 
-
-
-#exec su-exec $@
 # Re-set permission to the `wt` user
 # Run as user `wt`
 # This avoids permission denied if the data volume is mounted by root
 
-exec su-exec wt "$@"
+exec su-exec ttd "$@"
 

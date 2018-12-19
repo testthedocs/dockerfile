@@ -9,7 +9,7 @@ RESET=`tput sgr0`
 YELLOW=`tput setaf 3`
 
 # Name
-NAME = wundertax/mkdocs
+NAME = testthedocs/ttd-mkdocs
 # Get version form VERSION
 VERSION := $(shell cat VERSION)
 DOCKER := $(bash docker)
