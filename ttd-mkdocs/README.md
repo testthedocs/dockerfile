@@ -1,4 +1,5 @@
-# Wundertax MkDocs
+# TTD MkDocs
+
 Custom Docker Container With MkDocs
 
 ## About
@@ -14,8 +15,8 @@ Uses [Material](https://squidfunk.github.io/mkdocs-material/) as default theme.
 
 ## Install
 
-``` console
-docker pull wundertax/mkdocs
+``` shell
+docker pull testthedocs/ttd-mkdocs
 ```
 
 ## Docs
@@ -23,6 +24,7 @@ docker pull wundertax/mkdocs
 Documentation is located in the `docs` directory.
 
 ## Contributing
+
 Pull requests are welcome.
 
 For major changes, please open an issue first to discuss what you would like to change.
@@ -30,4 +32,5 @@ For major changes, please open an issue first to discuss what you would like to 
 Please make sure to update tests as appropriate.
 
 ## License
+
 [MIT](https://choosealicense.com/licenses/mit/)
