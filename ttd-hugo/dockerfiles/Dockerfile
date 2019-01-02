@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM alpine:3.8
 LABEL maintainer "Sven <sven@testthedocs.org" \
         org.label-schema.vendor = "TestTheDocs" \
         hugo_version=$HUGO_VERSION
