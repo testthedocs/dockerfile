@@ -2,8 +2,8 @@
 
 ## 0.0.3
 
-* Pin Alpine version
-* Cleanup
+* Pin Alpine version [svx]
+* Cleanup [svx]
 
 ## 0.0.2
 
