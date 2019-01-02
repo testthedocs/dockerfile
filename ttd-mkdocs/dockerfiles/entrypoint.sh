@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+set -eo pipefail
 
 # Colors
 # Vars
@@ -48,7 +48,7 @@ appHelp () {
 }
 
 # This avoids permission denied if the data volume is mounted by root
-chown -R wt /docs
+chown -R ttd /docs
 
 case "$1" in
   serve)

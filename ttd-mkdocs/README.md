@@ -2,6 +2,9 @@
 
 Custom Docker Container With MkDocs
 
+
+![Example screen](https://github.com/testthedocs/ttd-mkdocs/tree/master/docs/images/ttd-mkdos-example.png "Example Site")
+
 ## About
 
 [Docker](https://docker.com) based documentation testing suite based on [MkDocs](https://www.mkdocs.org/).
