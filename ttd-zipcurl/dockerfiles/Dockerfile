@@ -1,7 +1,6 @@
-FROM alpine:latest
+FROM alpine:3.8
 LABEL maintainer "Sven <sven@testthedocs.org>" \
     org.label-schema.vendor = "TestTheDocs"
-
 
 RUN adduser -s /bin/false -D -H ttd \
     && apk --no-cache add \
