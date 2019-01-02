@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.0.25
+
+* Update Sphinx to 1.8.3
+* Improve scripts
+* Rename CHANGES.md -> CHANGELOG.md
+
 ## 0.0.24
 
 * Update Sphinx to 1.8.2
