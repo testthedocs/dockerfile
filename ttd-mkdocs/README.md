@@ -3,7 +3,7 @@
 Custom Docker Container With MkDocs
 
 
-![Example screen](https://github.com/testthedocs/ttd-mkdocs/tree/master/docs/images/ttd-mkdos-example.png "Example Site")
+![Example screen](https://github.com/testthedocs/ttd-mkdocs/blob/master/docs/images/ttd-mkdocs-example.png)
 
 ## About
 
