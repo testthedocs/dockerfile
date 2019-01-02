@@ -2,16 +2,14 @@ FROM alpine:3.8
 LABEL maintainer "Sven <sven@testthedocs.org>" \
     org.label-schema.vendor = "TestTheDocs"
 
-ENV SPHINX_VERSION 1.8.2
+ENV SPHINX_VERSION 1.8.3
 
 VOLUME ["/build/docs"]
 COPY dockerfiles/_config /build/_config
 COPY dockerfiles/Makefile /build/Makefile
 COPY dockerfiles/_theme /build/_theme
 
-RUN builddeps=' \
-    git \
-    ' \
+RUN builddeps="git" \
     && adduser -s /bin/false -D -H ttd \
     && apk --no-cache add \
     $builddeps \
