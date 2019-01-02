@@ -1,5 +1,5 @@
 #!/bin/sh
-set -e
+set -euo pipefail
 
 # Check if we have a index.rst, if not exit
 file="/build/docs/index.rst"
