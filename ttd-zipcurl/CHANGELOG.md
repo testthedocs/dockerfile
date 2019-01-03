@@ -12,4 +12,4 @@
 
 ## 0.0.1
 
- * Initial commit [svx]
+* Initial commit [svx]
