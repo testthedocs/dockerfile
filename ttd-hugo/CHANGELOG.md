@@ -1,24 +1,29 @@
 # Changelog
 
+## 0.0.20
+
+* Update Hugo to 0.0.53 [svx]
+* Improve entrypoint.sh script [svx]
+
 ## 0.0.19
 
-* Update hugo to 0.52 [svx]
+* Update Hugo to 0.52 [svx]
 
 ## 0.0.18
 
-* Update hugo to 0.49 [svx]
+* Update Hugo to 0.49 [svx]
 
 ## 0.0.16
 
-* Update hugo to 0.0.47 [svx]
+* Update Hugo to 0.0.47 [svx]
 
 ## 0.0.16.1
 
-* Update hugo to 0.40.3 [svx]
+* Update Hugo to 0.40.3 [svx]
 
 ## 0.0.15
 
-* Update hugo to 0.40.1 [svx]
+* Update Hugo to 0.40.1 [svx]
 
 ## 0.0.14
 
@@ -26,11 +31,11 @@
 
 ## 0.0.12
 
-* Update hugo to 0.38.2 [svx]
+* Update Hugo to 0.38.2 [svx]
 
 ## 0.0.8
 
-* Update hugo to 0.37 [svx]
+* Update Hugo to 0.37 [svx]
 
 ## 0.0.6
 
