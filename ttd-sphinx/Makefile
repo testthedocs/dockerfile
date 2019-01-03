@@ -38,7 +38,7 @@ last_built_date: ## Show last build date
 	@docker inspect -f '{{ .Created }}' $(NAME):$(VERSION)
 
 .PHONY: release
-release: check_release_version build tag_latest push ## Combine steps to make release
+release: check_release_version build tag_latest push tag_github ## Combine steps to make release
 
 .PHONY: check_release_version
 check_release_version:
@@ -47,3 +47,9 @@ check_release_version:
 .PHONY: docker-lint
 docker-lint: ## Run hadolint against Dockerfile
 	@docker run --rm -i hadolint/hadolint hadolint --ignore DL3018 --ignore DL3013 - < dockerfiles/Dockerfile
+
+.PHONY: tag_github
+tag_github: ## Tags the commit on GitHub with version nr.
+	@git tag -a $(VERSION) -m "[release] $(VERSION) of $(NAME)" || true
+	@git push origin $(VERSION)
+
