@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.0.4
+
+- Update docs [svx]
+- Improve scripts [svx]
+- Update mkdocs.yml [svx]
+
 ## 0.0.3
 
 - Change user to ttd [svx]
