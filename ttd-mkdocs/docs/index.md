@@ -6,22 +6,22 @@ From the **root** of your repository
 ## Help
 
 ``` console
-docker run -it --rm -v `pwd`:/docs testthedocs/mkdocs:latest help
+docker run -it --rm -v `pwd`:/docs testthedocs/ttd-mkdocs:latest help
 ```
 
 ## Build
 
 ``` console
-docker run -it --rm -v `pwd`:/docs testthedocs/mkdocs:latest build
+docker run -it --rm -v `pwd`:/docs testthedocs/ttd-mkdocs:latest build
 ```
 ## Serve
 
 ``` console
-docker run -it --rm -p 8000:8000 -v `pwd`:/docs testthedocs/mkdocs:latest serve
+docker run -it --rm -p 8000:8000 -v `pwd`:/docs testthedocs/ttd-mkdocs:latest serve
 ```
 
 ## New
 
 ```console
-docker run -it --rm -v `pwd`:/docs testthedocs/mkdocs:latest new
+docker run -it --rm -v `pwd`:/docs testthedocs/ttd-mkdocs:latest new
 ```
