@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.0.26
+
+* Update Alpine to 3.9 [svx]
+* Update Sphinx to 1.8.4 [svx]
+
 ## 0.0.25
 
 * Update Sphinx to 1.8.3
