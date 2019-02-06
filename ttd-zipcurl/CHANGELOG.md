@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.4
+
+* Update Alpine to 3.9 [svx]
+
 ## 0.0.3
 
 * Pin Alpine version [svx]
