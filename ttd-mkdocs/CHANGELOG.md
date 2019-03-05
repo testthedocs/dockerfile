@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.5
+
+- Update Alpine to 3.9 [svx]
+
 ## 0.0.4
 
 - Update docs [svx]
