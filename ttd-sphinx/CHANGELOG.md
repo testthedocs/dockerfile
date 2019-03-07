@@ -1,10 +1,15 @@
 # Changelog
 
+## 0.0.27
+
+* Improve documentation [svx]
+* Improve Dockerfile [svx]
+* Adjust entrypoint script to allow markdown [svx]
+
 ## 0.0.26
 
-* Update Sphinx to 1.8.4 [svx]
 * Update Alpine to 3.9 [svx]
-* Improve documentation [svx]
+* Update Sphinx to 1.8.4 [svx]
 
 ## 0.0.25
 
