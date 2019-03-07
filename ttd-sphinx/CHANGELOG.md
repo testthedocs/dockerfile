@@ -1,10 +1,16 @@
 # Changelog
 
+## 0.0.26
+
+* Update Sphinx to 1.8.4 [svx]
+* Update Alpine to 3.9 [svx]
+* Improve documentation [svx]
+
 ## 0.0.25
 
-* Update Sphinx to 1.8.3
-* Improve scripts
-* Rename CHANGES.md -> CHANGELOG.md
+* Update Sphinx to 1.8.3 [svx]
+* Improve scripts [svx]
+* Rename CHANGES.md -> CHANGELOG.md [svx]
 
 ## 0.0.24
 

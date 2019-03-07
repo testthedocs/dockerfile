@@ -6,7 +6,7 @@
 
 **Note:**
 
-If you are/were using *ttd-sphinx* with spell-check and *os-example* please stick with version 0.0.21.
+> If you are/were using *ttd-sphinx* with spell-check and *os-example* please stick with version 0.0.21.
 
 
 
