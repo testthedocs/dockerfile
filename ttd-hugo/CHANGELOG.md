@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.0.21
+
+* Update Hugo to 0.54.0 [svx]
+* Update Alpine to 3.9 [svx]
+
 ## 0.0.20
 
 * Update Hugo to 0.0.53 [svx]

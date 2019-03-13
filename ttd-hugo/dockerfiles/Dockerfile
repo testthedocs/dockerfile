@@ -1,9 +1,9 @@
-FROM alpine:3.8
+FROM alpine:3.9
 LABEL maintainer "Sven <sven@testthedocs.org" \
         org.label-schema.vendor = "TestTheDocs" \
         hugo_version=$HUGO_VERSION
 
-ENV HUGO_VERSION 0.53
+ENV HUGO_VERSION 0.54.0
 ENV PIP_CACHE /root/.cache
 
 
