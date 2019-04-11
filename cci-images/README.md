@@ -1,2 +1,2 @@
-# CirecleCI Images
+# CircleCI Images
 Container images for CirecleCI 
