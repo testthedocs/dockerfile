@@ -35,7 +35,7 @@ pushd "$PROJECT_DIR"
 # eat-up any non-zero exit codes :-( Instead we find the files first and then
 # xargs hadolint on the found files.
 echo -en "$COL_YELLOW Running hadolint ...$COL_RESET\n"
-find . -type f -name "Dockerfile" | while read txt; do
+find . -type f -name "Dockerfile" | while read -r txt; do
   echo "$txt";   # Do something else
   docker run --rm -i hadolint/hadolint hadolint --ignore DL3018 - < "$txt"
 done
