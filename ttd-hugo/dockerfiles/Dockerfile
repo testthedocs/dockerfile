@@ -3,7 +3,7 @@ LABEL maintainer "Sven <sven@testthedocs.org" \
         org.label-schema.vendor = "TestTheDocs" \
         hugo_version=$HUGO_VERSION
 
-ENV HUGO_VERSION 0.54.0
+ENV HUGO_VERSION 0.55.3
 ENV PIP_CACHE /root/.cache
 
 
@@ -15,18 +15,18 @@ RUN builddeps=' \
 	&& adduser -s /bin/false -D -H ttd \
         && apk --no-cache add \
 	$builddeps \
-        ca-certificates \
         tini \
         su-exec \
+        libc6-compat \
+        g++ \
         && python3 -m ensurepip \
         && rm -r /usr/lib/python*/ensurepip \
         && pip3 install --upgrade pip \
         && pip3 install pygments \
-	&& update-ca-certificates \
-	&& wget https://github.com/spf13/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz \
-	&& tar zxf hugo_${HUGO_VERSION}_Linux-64bit.tar.gz \
+	&& wget https://github.com/spf13/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_Linux-64bit.tar.gz \
+	&& tar zxf hugo_extended_${HUGO_VERSION}_Linux-64bit.tar.gz \
 	&& mv hugo /usr/local/bin/hugo \
-	&& rm hugo_${HUGO_VERSION}_Linux-64bit.tar.gz \
+	&& rm hugo_extended_${HUGO_VERSION}_Linux-64bit.tar.gz \
 	&& apk del --purge $builddeps \
         && rm -rf $PIP_CACHE
 

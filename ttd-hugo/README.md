@@ -7,6 +7,7 @@
 - Small Image, based on [Alpine Linux](http://www.alpinelinux.org/).
 - Uses [Tini](https://github.com/krallin/tini) as `init`.
 - Uses [su-exec](https://github.com/ncopa/su-exec) for setting permissions
+- Uses `hugo extended`
 
 ## Dependencies
 
@@ -25,7 +26,7 @@ docker pull testthedocs/ttd-hugo
 Create a new site:
 
 ```bash
-docker run --rm -v `pwd`:/src hugotest new site ttd.blog
+docker run --rm -v `pwd`:/src testthedocs/ttd-hugo new site ttd.blog
 ```
 
 This will create a new directory with the following structure

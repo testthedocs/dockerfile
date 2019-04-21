@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.0.22
+
+* Update Hugo to 0.55.3 [svx]
+* Switch from Hugo to Hugo extended version [svx]
+* Update README [svx]
+
 ## 0.0.21
 
 * Update Hugo to 0.54.0 [svx]
