@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.30
+
+* Update Sphinx to 2.0.1 [svx]
+
 ## 0.0.29
 
 * Update Sphinx to 2.0.0 [svx]
