@@ -24,7 +24,7 @@ docker pull testthedocs/ttd-ansible-lint
 
 In this example a yaml file, called ``main.yml`` is checked.
 
-``` bash
+```shell
 docker run --rm -ti -v `pwd`:/build ttd-ansible-lint main.yml
 ```
 
