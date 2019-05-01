@@ -8,7 +8,8 @@ jobs:
       - checkout
       - run:
           command: |
-              /bin/hadolint --ignore DL3018 - < dockerfiles/Dockerfile
+              #/bin/hadolint --ignore DL3018 - < dockerfiles/Dockerfile
+              hadolint --version
 
 workflows:
   version: 2
