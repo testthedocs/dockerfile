@@ -8,7 +8,6 @@ Alpine Linux.
 
 - Small Image, based on [Alpine Linux](http://www.alpinelinux.org/).
 - Uses [Tini](https://github.com/krallin/tini) as `init`.
-- Uses [su-exec](https://github.com/ncopa/su-exec) for setting permissions.
 
 ## Dependencies
 
