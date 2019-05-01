@@ -1,0 +1,17 @@
+version: 2.1
+
+jobs:
+  docker-lint:
+    docker:
+     - image: hadolint/hadolint
+    steps:
+      - checkout
+      - run:
+          command: |
+              /bin/hadolint < dockerfiles/Dockerfile
+
+workflows:
+  version: 2
+  test:
+    jobs:
+      - docker-lint
