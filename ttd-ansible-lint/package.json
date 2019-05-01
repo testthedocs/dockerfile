@@ -1,0 +1,11 @@
+{
+  "name": "commitlint-test",
+  "version": "0.0.0-development",
+  "private": true,
+  "scripts": {
+    "commitmsg": "commitlint -g .commitlint.config.js -e $GIT_PARAMS"
+  },
+  "devDependencies": {
+    "husky": "^2.1.0"
+  }
+}
