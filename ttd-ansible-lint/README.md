@@ -3,7 +3,6 @@
 Containerized [ansible-lint](https://github.com/willthames/ansible-lint) based on
 Alpine Linux.
 
-
 ## Features
 
 - Small Image, based on [Alpine Linux](http://www.alpinelinux.org/).
@@ -17,7 +16,7 @@ Alpine Linux.
 
 Pull the image:
 
-``` bash
+```shell
 docker pull testthedocs/ttd-ansible-lint
 ```
 
