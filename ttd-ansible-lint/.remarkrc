@@ -1,6 +1,6 @@
 {
   "plugins": [
     "remark-stringify",
-    ["options.listItemIndent", 1]
+    ["options.listItemIndent", space]
   ]
 }
