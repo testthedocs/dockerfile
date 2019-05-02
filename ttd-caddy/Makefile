@@ -13,6 +13,7 @@ NAME = testthedocs/ttd-caddy
 # Get version form VERSION
 VERSION := $(shell cat VERSION)
 DOCKER := $(bash docker)
+BUILDCT = testthedocs/caddy-builder
 
 # Add the following 'help' target to your Makefile
 # And add help text after each target name starting with '\#\#'
@@ -20,9 +21,14 @@ DOCKER := $(bash docker)
 help: ## This help message
 	@echo -e "$$(grep -hE '^\S+:.*##' $(MAKEFILE_LIST) | sed -e 's/:.*##\s*/:/' -e 's/^\(.\+\):\(.*\)/\\x1b[36m\1\\x1b[m:\2/' | column -c2 -t -s :)"
 
-.PHONY: build
-build: ## Builds docker image
+.PHONY: image
+image: ## Builds docker image
 	docker build --no-cache=true --build-arg version=$(VERSION) -t $(NAME):$(VERSION) --rm .
+
+
+.PHONY: builder
+builder: ## Creates build container for ttd-caddy
+	docker build --no-cache=true --rm -f builder/Dockerfile -t $(BUILDCT) .
 
 .PHONY: push
 push: ## Pushes images
@@ -38,8 +44,7 @@ last_built_date: ## Show last build date
 	docker inspect -f '{{ .Created }}' $(NAME):$(VERSION)
 
 .PHONY: release
-release: check_release_version build tag_latest push ## Combine steps to make release
-
+release: check_release_version image tag_latest push ## Combine steps to make release
 
 .PHONY: check_release_version
 check_release_version:

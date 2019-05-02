@@ -1,48 +1,55 @@
-
-# Based on testthedocs/caddy and https://github.com/jojomi/docker-caddy
-# First build the binary so we are compliant with the license
-
+# Based on https://github.com/abiosoft/caddy-docker
+#
 # Builder
-FROM golang:1.10 as builder
+#
+FROM testthedocs/caddy-builder as builder
 
-ENV CADDY_VERSION=0.11.0
+ARG version="1.0.0"
+#ARG plugins="git,cors,realip,expires,cache"
 
-RUN go get -u github.com/mholt/caddy && go get -u github.com/caddyserver/builds
-WORKDIR /go/src/github.com/mholt/caddy/caddy
-RUN git checkout v${CADDY_VERSION}
-WORKDIR /go/src/github.com/mholt/caddy/caddy
-# I decided to disable telemetry in this image.
-# If it would have been a simple CLI switch, I would have put the switch to the CMD,
-# but it seems I have to disable all metrics one by one.
-# Disable next line if you want to contribute to telemetry data collection.
-RUN sed -i"" 's/const enableTelemetry = true/const enableTelemetry = false/g' /go/src/github.com/mholt/caddy/caddy/caddymain/run.go
-RUN CGO_ENABLED=0 GOOS=linux go run build.go -goos=linux -goarch=amd64
+# process wrapper
+#RUN go get -v github.com/abiosoft/parent
 
+RUN VERSION=${version} ENABLE_TELEMETRY=false /bin/sh /usr/bin/builder.sh
 
+#
 # Final stage
+#
+FROM alpine:3.9
 
-FROM alpine:3.7
-
-ARG version="0.11.0"
+ARG version="1.0.0"
 
 LABEL maintainer "Sven <sven@testthedocs.org>" \
-    org.label-schema.vendor = "TestTheDocs" \
+    org.label-schema.vendor="TestTheDocs" \
     caddy_version="$version"
 
+# Let's Encrypt Agreement
+ENV ACME_AGREE="false"
+
+# Telemetry Stats
+ENV ENABLE_TELEMETRY="false"
 
 RUN apk add --no-cache tini
 
-# Install caddy
-COPY --from=builder /go/src/github.com/mholt/caddy/caddy/caddy /usr/bin/caddy
+# Install Caddy
+COPY --from=builder /install/caddy /usr/bin/caddy
 
+# Validate install
+RUN /usr/bin/caddy -version
+RUN /usr/bin/caddy -plugins
+
+
+#VOLUME /root/.caddy /srv
 WORKDIR /srv
 
 COPY Caddyfile /etc/Caddyfile
+COPY index.html /srv/html/index.html
 #COPY index.html /srv/html/index.html
-EXPOSE 80 443 2015
 
+#ENTRYPOINT ["bash"]
+ENTRYPOINT ["/sbin/tini", "caddy"]
+#CMD ["--conf", "/etc/Caddyfile", "--log", "stdout", "--agree=$ACME_AGREE"]
 
-ENTRYPOINT ["/sbin/tini", "--", "/usr/bin/caddy"]
 CMD ["--conf", "/etc/Caddyfile", "--log", "stdout"]
 
 EXPOSE 80 443 2015

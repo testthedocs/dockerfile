@@ -1,38 +1,71 @@
 # ttd-caddy
-Caddy Webserver In A Container
 
-This is a build of caddy without telemetry
+A [Docker](https://docker.com) image for [Caddy](https://caddyserver.com).
 
-## Stage One
+This is a build of Caddy without telemetry.
 
-- Building caddy straight from GitHub (Open Source Version)
+Based on [caddy-docker](https://github.com/abiosoft/caddy-docker) of Abiola Ibrahim.
 
-## Stage Two
+## Quick Start
 
-- Building the base container using the caddy binary which got build in Stage One
+```shell
+docker run -d -p 2015:2015 testthedocs/ttd-caddy
+```
+Point your browser to `http://127.0.0.1:2015`.
 
-### Notes
+![Example screen](https://github.com/testthedocs/ttd-caddy/blob/master/docs/_static/ttd-caddy-default.png)
 
-#### Changing The Default Port
+## Usage
 
-If you need to change the default port (2015), you can do that by adjusting *Stage Two* of the Dockerfile
+### Default Caddyfile
+
+The image contains a default Caddyfile.
 
 ```
-# Stage Two
-...
-...
-EXPOSE 80 443 2016
-...
-...
-CMD ["-port", "2016", "--conf", "/etc/Caddyfile"]
+0.0.0.0
+browse
+log stdout
+errors stdout
+gzip
+
+header / {
+      Cache-Control "max-age=86400"
+    }
+
+root /srv/html
 ```
 
-This examples changes the default port (2015) to **2016**.
+### Paths in container
 
-- Expose port 2016
-- Adjust CMD and add the ``port flag`` and ``port number``
+Caddyfile: `/etc/Caddyfile`
 
-Start container on new port:
+Sites root: `/srv`
+
+### Using local Caddyfile and sites root
+
+Replace `/path/to/Caddyfile` and `/path/to/sites/root` accordingly.
+
+```shell
+docker run -d \
+    -v /path/to/sites/root:/srv \
+    -v path/to/Caddyfile:/etc/Caddyfile \
+    -p 2015:2015 \
+    testthedocs/ttd-caddy
+```
+
+## Building
+
+- First build the builder image by running `make builder`.
+- Second run `make image`.
+
+### Stage One
+
+Building Caddy from GitHub (Open Source Version).
+
+### Stage Two
+
+Building the base container using the Caddy binary which got build in Stage One
+
 ```bash
-docker run -d -p 2016:2016 testthedocs/ttd-caddy:latest
+docker build -t testthedocs/ttd-caddy
 ```
