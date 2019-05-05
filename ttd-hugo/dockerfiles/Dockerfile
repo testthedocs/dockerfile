@@ -19,6 +19,7 @@ RUN builddeps=' \
         su-exec \
         libc6-compat \
         g++ \
+        git \
         && python3 -m ensurepip \
         && rm -r /usr/lib/python*/ensurepip \
         && pip3 install --upgrade pip \

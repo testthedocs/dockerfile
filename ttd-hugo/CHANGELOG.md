@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.24
+
+* Add `git` for shwoing `git info` on docs [svx]
+
 ## 0.0.23
 
 * Update Hugo to 0.55.5 [svx]
