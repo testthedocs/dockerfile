@@ -3,7 +3,7 @@ LABEL maintainer "Sven <sven@testthedocs.org" \
         org.label-schema.vendor = "TestTheDocs" \
         hugo_version=$HUGO_VERSION
 
-ENV HUGO_VERSION 0.55.3
+ENV HUGO_VERSION 0.55.5
 ENV PIP_CACHE /root/.cache
 
 
@@ -34,6 +34,9 @@ VOLUME /src
 WORKDIR /src
 
 COPY dockerfiles/entrypoint.sh /usr/local/bin/entrypoint.sh
+
+EXPOSE 1313
+
 ENTRYPOINT [ "/sbin/tini", "--", "/usr/local/bin/entrypoint.sh" ]
 
 

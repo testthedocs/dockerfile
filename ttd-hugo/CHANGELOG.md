@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.0.23
+
+* Update Hugo to 0.55.5 [svx]
+* Add `EXPOSE 1313` to Dockerfile for `hugo server` [svx]
+
 ## 0.0.22
 
 * Update Hugo to 0.55.3 [svx]
