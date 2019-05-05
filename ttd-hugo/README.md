@@ -25,12 +25,12 @@ docker pull testthedocs/ttd-hugo
 
 Create a new site:
 
-```bash
+```shell
 docker run --rm -v `pwd`:/src testthedocs/ttd-hugo new site ttd.blog
 ```
 
 This will create a new directory with the following structure
-```bash
+```shell
 drwxr-xr-x  8 svx svx 4096 Dec 24 12:12 .
 drwxr-xr-x 44 svx svx 4096 Dec 24 12:12 ..
 drwxr-xr-x  2 svx svx 4096 Dec 24 12:12 archetypes
@@ -42,6 +42,11 @@ drwxr-xr-x  2 svx svx 4096 Dec 24 12:12 static
 drwxr-xr-x  2 svx svx 4096 Dec 24 12:12 themes
 ```
 
+Serve your site locally:
+
+```shell
+docker run --rm -v `pwd`:/src testthedocs/ttd-hugo server --minify --bind=0.0.0.0
+```
 ## Contribute
 
 - [Issue Tracker](github.com/testthedocs/ttd-hugo/issues)
