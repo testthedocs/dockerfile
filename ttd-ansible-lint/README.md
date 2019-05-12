@@ -1,5 +1,7 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/96405c4eeb64419d981fc37027a816b0)](https://www.codacy.com/app/svx/ttd-ansible-lint?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=testthedocs/ttd-ansible-lint&amp;utm_campaign=Badge_Grade)
 
+[![Build Status](https://drone.testthedocs.org/api/badges/testthedocs/ttd-ansible-lint/status.svg)](https://drone.testthedocs.org/testthedocs/ttd-ansible-lint)
+
 # ttd-ansible-lint
 
 Containerized [ansible-lint](https://github.com/willthames/ansible-lint)
