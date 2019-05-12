@@ -1,0 +1,9 @@
+kind: pipeline
+name: default
+
+hadolint:
+    group: validate
+    image: hadolint/hadolint:latest-debian
+    commands:
+      - hadolint --version
+      - hadolint dockerfiles/Dockerfile
