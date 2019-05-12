@@ -1,36 +1,30 @@
-FROM alpine:latest
-LABEL maintainer "Sven <sven@testthedocs.org>" \
-    org.label-schema.vendor = "TestTheDocs"
+FROM python:3-alpine3.9
+LABEL maintainer="Sven <sven@testthedocs.org>" \
+    description="ansible-lint" \
+    org.label-schema.vendor="TestTheDocs"
 
 ENV PIP_CACHE /root/.cache
+ENV AL_VERSION 4.1.0
 
-RUN builddeps=' \
-    ca-certificates \
-    gcc \
-    libffi-dev \
-    python-dev \
-    musl-dev \
-    openssl-dev \
-    ' \
-    && adduser -s /bin/false -D -H ttduser \
-    && apk --no-cache add \
-    $builddeps \
-    python2 \
-    make \
-    tini \
-    su-exec \
-    && python2 -m ensurepip \
-    && rm -r /usr/lib/python*/ensurepip \
-    && pip2 install --upgrade pip \
-    && pip2 install --upgrade setuptools \
-    && pip2 install ansible-lint \
+RUN apk add --no-cache --virtual .build-deps \
+        make \
+        gcc \
+        libc-dev \
+        openssl-dev \
+        python3-dev \
+        libffi-dev \
+    && pip install ansible-lint==${AL_VERSION} \
     && rm -rf $PIP_CACHE \
-    && apk del --purge $builddeps
+    && apk --no-cache add \
+        tini \
+        su-exec \
+    && rm -rf $PIP_CACHE \
+    && apk del .build-deps
 
-VOLUME ["/build"]
+#VOLUME ["/srv"]
 
 
-WORKDIR /build
+WORKDIR /srv
 
 COPY dockerfiles/entrypoint.sh /usr/local/bin/entrypoint.sh
 

@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
 ## 0.0.1
 
-* Initial commit [svx]
+**Release Date:** 2017-09-25
+
+- Initial release of version 0.0.1

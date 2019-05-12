@@ -1,11 +1,6 @@
 #!/bin/sh
-set -e
+set -eo pipefail
 
 
-
-#exec su-exec $@
-# Re-set permission to the `sphinx` user
-# This avoids permission denied if the data volume is mounted by root
-chown -R ttduser /build
-exec su-exec ttduser ansible-lint "$@"
+exec ansible-lint --force-color "$@"
 
