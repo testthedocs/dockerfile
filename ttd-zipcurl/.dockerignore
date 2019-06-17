@@ -1,0 +1,7 @@
+VERSION
+README.md
+Makefile
+CHANGELOG.md
+.git/*
+.gitignore
+LICENSE
