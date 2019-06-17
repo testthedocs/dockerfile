@@ -1,0 +1,30 @@
+site_name: testthedocs/mkdocs
+site_description: 'MkDocs'
+site_author: 'TestTheDocs'
+theme:
+  name: 'material'
+  logo: 'images/logo.svg'
+  favicon: 'images/favicon.png'
+  palette:
+    primary: 'Blue'
+    accent: 'Blue'
+    #  feature:
+    #tabs: true
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - toc:
+      permalink: true
+
+# Repository
+repo_name: testthedocs/mkdocs
+repo_url: https://github.com/testthedocs/mkdocs
+edit_uri: ""
+
+# Copyright
+copyright: 'Copyleft &copy; 2019 - TestTheDocs'
+
+# Page tree
+nav:
+  - Home: index.md
