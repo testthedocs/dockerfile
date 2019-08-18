@@ -1,4 +1,4 @@
-FROM python:3-alpine3.9
+FROM python:3-alpine3.10
 LABEL maintainer="Sven <sven@testthedocs.org>" \
     description="ansible-lint" \
     org.label-schema.vendor="TestTheDocs"
@@ -18,6 +18,7 @@ RUN apk add --no-cache --virtual .build-deps \
     && apk --no-cache add \
         tini \
         su-exec \
+	bash \
     && rm -rf $PIP_CACHE \
     && apk del .build-deps
 
@@ -29,3 +30,4 @@ WORKDIR /srv
 COPY dockerfiles/entrypoint.sh /usr/local/bin/entrypoint.sh
 
 ENTRYPOINT ["/sbin/tini", "--", "/usr/local/bin/entrypoint.sh"]
+#ENTRYPOINT ["bash"]

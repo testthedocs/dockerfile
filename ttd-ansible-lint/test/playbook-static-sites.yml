@@ -1,0 +1,8 @@
+---
+- hosts: one
+  gather_facts: True
+  roles:
+     - { role: ttd.common }
+    - { role: ttd.motd }
+    - { role: ttd.nginx }
+
