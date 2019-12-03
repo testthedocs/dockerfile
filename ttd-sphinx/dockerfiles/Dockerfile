@@ -1,14 +1,15 @@
-FROM alpine:3.9
+FROM alpine:3.10
 LABEL maintainer "Sven <sven@testthedocs.org>" \
     org.label-schema.vendor = "TestTheDocs"
 
-ENV SPHINX_VERSION 2.0.1
+ENV SPHINX_VERSION 2.2.2
 
 VOLUME ["/build/docs"]
 COPY dockerfiles/_config /build/_config
 COPY dockerfiles/Makefile /build/Makefile
 COPY dockerfiles/_theme /build/_theme
 
+# hadolint ignore=DL3018
 RUN adduser -s /bin/false -D -H ttd \
         && apk --no-cache add \
             aspell-en \
@@ -20,6 +21,7 @@ RUN adduser -s /bin/false -D -H ttd \
         && python3 -m ensurepip \
         && rm -r /usr/lib/python*/ensurepip
 
+# hadolint ignore=DL3018,DL3013
 RUN set -x \
         && apk add --no-cache --virtual .build-deps \
             git \
