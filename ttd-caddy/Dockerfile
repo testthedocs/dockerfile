@@ -15,7 +15,7 @@ RUN VERSION=${version} ENABLE_TELEMETRY=false /bin/sh /usr/bin/builder.sh
 #
 # Final stage
 #
-FROM alpine:3.9
+FROM alpine:3.11
 
 ARG version="1.0.0"
 

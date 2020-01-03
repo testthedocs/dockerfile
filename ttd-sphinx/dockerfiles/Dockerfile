@@ -1,8 +1,8 @@
-FROM alpine:3.10
+FROM alpine:3.11
 LABEL maintainer "Sven <sven@testthedocs.org>" \
     org.label-schema.vendor = "TestTheDocs"
 
-ENV SPHINX_VERSION 2.2.2
+ENV SPHINX_VERSION 2.3.1
 
 VOLUME ["/build/docs"]
 COPY dockerfiles/_config /build/_config

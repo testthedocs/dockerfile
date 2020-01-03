@@ -1,4 +1,4 @@
-FROM testthedocs/cci-alpine:0.0.1
+FROM testthedocs/cci-alpine:0.0.3
 
 LABEL maintainer "Sven <sven@testthedocs.org>" \
     org.label-schema.vendor = "TestTheDocs" \
