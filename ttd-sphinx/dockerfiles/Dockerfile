@@ -2,7 +2,7 @@ FROM alpine:3.11
 LABEL maintainer "Sven <sven@testthedocs.org>" \
     org.label-schema.vendor = "TestTheDocs"
 
-ENV SPHINX_VERSION 2.3.1
+ENV SPHINX_VERSION 1.7.4
 
 VOLUME ["/build/docs"]
 COPY dockerfiles/_config /build/_config
@@ -28,10 +28,10 @@ RUN set -x \
         && pip3 install --no-cache-dir --upgrade pip \
         && pip3 install --no-cache-dir --upgrade setuptools \
         && pip3 install --no-cache-dir sphinx==${SPHINX_VERSION} \
-            recommonmark \
-            sphinx_rtd_theme \
-            sphinx_press_theme \
-            sphinx-sitemap \
+            recommonmark==0.5.0 \
+            sphinx_rtd_theme==0.4.3 \
+            sphinxcontrib.httpexample \
+            sphinxcontrib-httpdomain==1.6.1 \
     && apk del .build-deps
 
 WORKDIR /build
